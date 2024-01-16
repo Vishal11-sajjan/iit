@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config(); //added so we can access .env variables
-const questionsModel = require("./models/Questions");
+const questionsModel = require("./Questions");
 const cors = require('cors');
 const mongoConnect = require("./db");
 
