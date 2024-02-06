@@ -80,6 +80,18 @@ app.get("/digital_marketing", (req, res) => {
   });
 });
 
+app.get("/figma_training", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "figma training" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+  
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+
 app.listen(3000, () => {
   console.log("server is listening on port 3000");
 });
