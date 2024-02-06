@@ -21,23 +21,24 @@ var users;
   //   console.error('Error fetching users:', error);
   // });
 
-  //Add uestions to the database
+  /*----------     Add questions to the database   --------------  */
 
   // const questionsArray = [
-  //   {"id": "1", "questions": "Introduction To Java", "type": "core_java"},
-  //   {"id": "2", "questions": "Java Fundamentals", "type": "core_java"},
-  //   {"id": "3", "questions": "Essentials of Object-Oriented Programming", "type": "core_java"},
-  //   {"id": "4", "questions": "Writing Java Classes", "type": "core_java"},
-  //   {"id": "5", "questions": "Packages", "type": "core_java"},
-  //   {"id": "6", "questions": "Exception Handling", "type": "core_java"},
-  //   {"id": "7", "questions": "I/O Operations in Java", "type": "core_java"},
-  //   {"id": "8", "questions": "Multithreaded Programming", "type": "core_java"},
-  //   {"id": "9", "questions": "Java Util Package / Collections Framework", "type": "core_java"},
-  //   {"id": "10", "questions": "Generics", "type": "core_java"},
-  //   {"id": "11", "questions": "Inner Classes", "type": "core_java"},
-  //   {"id": "12", "questions": "Abstract Window Toolkit", "type": "core_java"},
-  //   {"id": "13", "questions": "Collection of Framework", "type": "core_java"}
+  //   { "id": "1", "questions": "Social Media Marketing", "type": "digital_marketing" },
+  //   { "id": "2", "questions": "Social Media Optimization", "type": "digital_marketing" },
+  //   { "id": "3", "questions": "Affiliate Marketing Training", "type": "digital_marketing" },
+  //   { "id": "4", "questions": "Sales Marketing Training", "type": "digital_marketing" },
+  //   { "id": "5", "questions": "Content Marketing", "type": "digital_marketing" },
+  //   { "id": "6", "questions": "Pay Per Click", "type": "digital_marketing" },
+  //   { "id": "7", "questions": "Local Business Marketing", "type": "digital_marketing" },
+  //   { "id": "8", "questions": "Facebook Marketing Training", "type": "digital_marketing" },
+  //   { "id": "9", "questions": "Ecommerce Marketing Training", "type": "digital_marketing" },
+  //   { "id": "10", "questions": "YouTube Marketing Training", "type": "digital_marketing" },
+  //   { "id": "11", "questions": "AdSense Training", "type": "digital_marketing" },
+  //   { "id": "12", "questions": "Online Present Analysis", "type": "digital_marketing" },
+  //   { "id": "13", "questions": "Word press Website", "type": "digital_marketing" }
   // ];
+  
   
   // questionsModel.insertMany(questionsArray)
   //   .then((data) => {
@@ -61,6 +62,16 @@ app.get("/questions", (req, res) => {
 app.get("/core_java_questions", (req, res) => {
   var getUsers;
   questionsModel.find({ type: "core_java" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+app.get("/digital_marketing", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "digital_marketing" }).then((data) => {
     getUsers = data;
   res.json(getUsers);
 
