@@ -23,30 +23,30 @@ var users;
 
   /*----------     Add questions to the database   --------------  */
 
-  // const questionsArray = [
-  //   { "id": "1", "questions": "Social Media Marketing", "type": "digital_marketing" },
-  //   { "id": "2", "questions": "Social Media Optimization", "type": "digital_marketing" },
-  //   { "id": "3", "questions": "Affiliate Marketing Training", "type": "digital_marketing" },
-  //   { "id": "4", "questions": "Sales Marketing Training", "type": "digital_marketing" },
-  //   { "id": "5", "questions": "Content Marketing", "type": "digital_marketing" },
-  //   { "id": "6", "questions": "Pay Per Click", "type": "digital_marketing" },
-  //   { "id": "7", "questions": "Local Business Marketing", "type": "digital_marketing" },
-  //   { "id": "8", "questions": "Facebook Marketing Training", "type": "digital_marketing" },
-  //   { "id": "9", "questions": "Ecommerce Marketing Training", "type": "digital_marketing" },
-  //   { "id": "10", "questions": "YouTube Marketing Training", "type": "digital_marketing" },
-  //   { "id": "11", "questions": "AdSense Training", "type": "digital_marketing" },
-  //   { "id": "12", "questions": "Online Present Analysis", "type": "digital_marketing" },
-  //   { "id": "13", "questions": "Word press Website", "type": "digital_marketing" }
-  // ];
+  const questionsArray = [
+    { "id": "1", "questions": "Introduction to Figma", "type": "design" },
+    { "id": "2", "questions": "Figma Basics: Navigation and Tools", "type": "design" },
+    { "id": "3", "questions": "Working with Frames and Shapes in Figma", "type": "design" },
+    { "id": "4", "questions": "Using Figma for UI/UX Design", "type": "design" },
+    { "id": "5", "questions": "Collaborating in Figma: Teams and Prototyping", "type": "design" },
+    { "id": "6", "questions": "Advanced Techniques in Figma: Components and Variants", "type": "design" },
+    { "id": "7", "questions": "Figma for Web Design: Responsive Design and Layouts", "type": "design" },
+    { "id": "8", "questions": "Figma for Mobile App Design: Prototyping and Assets", "type": "design" },
+    { "id": "9", "questions": "Design Systems in Figma: Creating and Managing Libraries", "type": "design" },
+    { "id": "10", "questions": "Figma for Graphic Design: Vector Illustration and Image Editing", "type": "design" },
+    { "id": "11", "questions": "Figma for UX Research: Wireframing and User Flows", "type": "design" },
+    { "id": "12", "questions": "Animating Designs in Figma: Prototyping Interactions", "type": "design" },
+    { "id": "13", "questions": "Figma Plugins: Extending Functionality and Workflow Automation", "type": "design" }
+];
+
   
-  
-  // questionsModel.insertMany(questionsArray)
-  //   .then((data) => {
-  //     console.log('Questions inserted successfully:', data);
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error inserting questions:', error);
-  //   });
+  questionsModel.insertMany(questionsArray)
+    .then((data) => {
+      console.log('Questions inserted successfully:', data);
+    })
+    .catch((error) => {
+      console.error('Error inserting questions:', error);
+    });
 
 
 app.get("/questions", (req, res) => {
@@ -70,6 +70,16 @@ app.get("/core_java_questions", (req, res) => {
   });
 });
 app.get("/digital_marketing", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "digital_marketing" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+app.get("/figma_training", (req, res) => {
   var getUsers;
   questionsModel.find({ type: "digital_marketing" }).then((data) => {
     getUsers = data;
