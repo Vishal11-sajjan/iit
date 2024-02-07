@@ -24,19 +24,19 @@ var users;
   /*----------     Add questions to the database   --------------  */
 
   const questionsArray = [
-    { "id": "1", "questions": "Introduction to Figma", "type": "design" },
-    { "id": "2", "questions": "Figma Basics: Navigation and Tools", "type": "design" },
-    { "id": "3", "questions": "Working with Frames and Shapes in Figma", "type": "design" },
-    { "id": "4", "questions": "Using Figma for UI/UX Design", "type": "design" },
-    { "id": "5", "questions": "Collaborating in Figma: Teams and Prototyping", "type": "design" },
-    { "id": "6", "questions": "Advanced Techniques in Figma: Components and Variants", "type": "design" },
-    { "id": "7", "questions": "Figma for Web Design: Responsive Design and Layouts", "type": "design" },
-    { "id": "8", "questions": "Figma for Mobile App Design: Prototyping and Assets", "type": "design" },
-    { "id": "9", "questions": "Design Systems in Figma: Creating and Managing Libraries", "type": "design" },
-    { "id": "10", "questions": "Figma for Graphic Design: Vector Illustration and Image Editing", "type": "design" },
-    { "id": "11", "questions": "Figma for UX Research: Wireframing and User Flows", "type": "design" },
-    { "id": "12", "questions": "Animating Designs in Figma: Prototyping Interactions", "type": "design" },
-    { "id": "13", "questions": "Figma Plugins: Extending Functionality and Workflow Automation", "type": "design" }
+    { "id": "1", "questions": "Introduction to Figma", "type": "figma_training" },
+    { "id": "2", "questions": "Figma Basics: Navigation and Tools", "type": "figma_training" },
+    { "id": "3", "questions": "Working with Frames and Shapes in Figma", "type": "figma_training" },
+    { "id": "4", "questions": "Using Figma for UI/UX Design", "type": "figma_training" },
+    { "id": "5", "questions": "Collaborating in Figma: Teams and Prototyping", "type": "figma_training" },
+    { "id": "6", "questions": "Advanced Techniques in Figma: Components and Variants", "type": "figma_training" },
+    { "id": "7", "questions": "Figma for Web Design: Responsive Design and Layouts", "type": "figma_training" },
+    { "id": "8", "questions": "Figma for Mobile App Design: Prototyping and Assets", "type": "figma_training" },
+    { "id": "9", "questions": "Design Systems in Figma: Creating and Managing Libraries", "type": "figma_training" },
+    { "id": "10", "questions": "Figma for Graphic Design: Vector Illustration and Image Editing", "type": "figma_training" },
+    { "id": "11", "questions": "Figma for UX Research: Wireframing and User Flows", "type": "figma_training" },
+    { "id": "12", "questions": "Animating Designs in Figma: Prototyping Interactions", "type": "figma_training" },
+    { "id": "13", "questions": "Figma Plugins: Extending Functionality and Workflow Automation", "type": "figma_training" }
 ];
 
   
