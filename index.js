@@ -24,22 +24,18 @@ var users;
   /*----------     Add questions to the database   --------------  */
 
 //   const questionsArray = [
-//     { "id": "1", "questions": "Introduction to Figma", "type": "figma_training" },
-//     { "id": "2", "questions": "Figma Basics: Navigation and Tools", "type": "figma_training" },
-//     { "id": "3", "questions": "Working with Frames and Shapes in Figma", "type": "figma_training" },
-//     { "id": "4", "questions": "Using Figma for UI/UX Design", "type": "figma_training" },
-//     { "id": "5", "questions": "Collaborating in Figma: Teams and Prototyping", "type": "figma_training" },
-//     { "id": "6", "questions": "Advanced Techniques in Figma: Components and Variants", "type": "figma_training" },
-//     { "id": "7", "questions": "Figma for Web Design: Responsive Design and Layouts", "type": "figma_training" },
-//     { "id": "8", "questions": "Figma for Mobile App Design: Prototyping and Assets", "type": "figma_training" },
-//     { "id": "9", "questions": "Design Systems in Figma: Creating and Managing Libraries", "type": "figma_training" },
-//     { "id": "10", "questions": "Figma for Graphic Design: Vector Illustration and Image Editing", "type": "figma_training" },
-//     { "id": "11", "questions": "Figma for UX Research: Wireframing and User Flows", "type": "figma_training" },
-//     { "id": "12", "questions": "Animating Designs in Figma: Prototyping Interactions", "type": "figma_training" },
-//     { "id": "13", "questions": "Figma Plugins: Extending Functionality and Workflow Automation", "type": "figma_training" }
+//     { "id": "1", "questions": "Introduction to Illustration Software", "type": "illustration_training" },
+//     { "id": "2", "questions": "Basic Tools and Techniques in Illustration", "type": "illustration_training" },
+//     { "id": "3", "questions": "Color Theory and Composition for Illustration", "type": "illustration_training" },
+//     { "id": "4", "questions": "Creating Vector Graphics in Illustration Software", "type": "illustration_training" },
+//     { "id": "5", "questions": "Digital Painting and Rendering Techniques", "type": "illustration_training" },
+//     { "id": "6", "questions": "Illustrating Characters and Creatures", "type": "illustration_training" },
+//     { "id": "7", "questions": "Illustration for Web and Print Design", "type": "illustration_training" },
+//     { "id": "8", "questions": "Advanced Illustration Techniques and Effects", "type": "illustration_training" },
+//     { "id": "9", "questions": "Creating Illustration Assets and Libraries", "type": "illustration_training" },
+//     { "id": "10", "questions": "Illustration Workflows and Collaboration Tools", "type": "illustration_training" },
 // ];
 
-  
 //   questionsModel.insertMany(questionsArray)
 //     .then((data) => {
 //       console.log('Questions inserted successfully:', data);
@@ -51,7 +47,7 @@ var users;
 
 app.get("/questions", (req, res) => {
   var getUsers;
-  questionsModel.find().then((data) => {
+  questionsModel.find({ type: "questions" }).then((data) => {
     getUsers = data;
   res.json(getUsers);
 
@@ -85,6 +81,56 @@ app.get("/figma_training", (req, res) => {
     getUsers = data;
   res.json(getUsers);
 
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+app.get("/illustration_training", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "illustration_training" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+
+app.get("/photoshop_training", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "photoshop_training" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+app.get("/performance_training", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "performance_training" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+app.get("/manual_training", (req, res) => {
+  var getUsers;
+  questionsModel.find({ type: "manual_training" }).then((data) => {
+    getUsers = data;
+  res.json(getUsers);
+
+  }).catch((error) => {
+    console.error('Error fetching user:', error);
+  });
+});
+
+
+app.get('/sabka_malik_ek/:name', (req, res)=> {  //code for all type in one 
+  questionsModel.find({ type: req.params?.name }).then((data) => {
+  res.json(data);
   }).catch((error) => {
     console.error('Error fetching user:', error);
   });
